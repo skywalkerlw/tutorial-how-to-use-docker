@@ -1,0 +1,9 @@
+version: '3'
+services: 
+  redis-server: 
+    image: 'redis'
+  node-app:
+    # 服务除了可以基于指定的镜像，还可以基于一份 Dockerfile，在使用 up 启动之时执行构建任务，这个构建标签就是 build
+    build: . 
+    ports:
+      - "8081:8081"
